@@ -4,12 +4,14 @@
 CurrentDir=$(pwd)
 
 # Path to the file containing the list of repositories
-REPO_LIST_FILE=~/x/scripts/repos.txt
+REPO_LIST_FILE="$HOME/x/scripts/repos.txt"
 
 # Read each line from the file
 while read repo; do
     echo "Checking $repo for changes..."
-    cd "$repo"
+    # Replace ~ with $HOME for proper path expansion
+    repoPath=${repo/\~/$HOME}
+    cd "$repoPath" || continue
 
     # Check for changes
     gitStatus=$(git status --porcelain)
