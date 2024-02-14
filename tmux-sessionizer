@@ -2,7 +2,8 @@
 
 # find ~/Projects ~/Documents -mindepth 1 -maxdepth 1 -type d 
 # find ~/Projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf 
-session=$(find ~ ~/Projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+# session=$(find ~ ~/Projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+session=$(find ~ ~/x ~/Projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
 session_name=$(basename "$session" | tr . _)
 
 
