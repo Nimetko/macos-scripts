@@ -16,8 +16,10 @@ while read repo; do
     # Check for changes
     gitStatus=$(git status --porcelain)
     if [ ! -z "$gitStatus" ]; then
-        echo "Changes found in $repoPath."
-        git status --porcelain
+        # echo "Changes found in $repoPath."
+        # git status --porcelain
+        echo -e "Changes found in $repoPath."
+        echo -e "\033[0;31m$gitStatus\033[0m"
     else
         echo "No changes in $repoPath."
     fi
