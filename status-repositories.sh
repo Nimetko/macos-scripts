@@ -16,10 +16,8 @@ while read repo; do
     # Check for changes
     gitStatus=$(git status --porcelain)
     if [ ! -z "$gitStatus" ]; then
-        echo "Changes found in $repoPath. Adding, committing, and pushing..."
-        git add .
-        git commit -m "Auto commit."
-        git push
+        echo "Changes found in $repoPath."
+        git status --porcelain
     else
         echo "No changes in $repoPath."
     fi
