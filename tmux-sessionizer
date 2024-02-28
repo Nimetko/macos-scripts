@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # Primeagensessionazer
-session=$(find ~ ~/x ~/Projects ~/x/work ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
-# session=$(find ~ ~/x ~/Projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+session=$(find ~ ~/x ~/Projects ~/x/work ~/x/.dotfiles/ ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2> /dev/null; then 
