@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-# Primeagensessionazer
-session=$(find ~ ~/x ~/.config/ ~/.config/nvim/ ~/Projects ~/x/work ~/x/.dotfiles/ ~/Documents ~/LEGO/ -mindepth 1 -maxdepth 1 -type d | fzf)
+if [[ $# -eq 1 ]]; then
+    session=$1
+else
+    session=$(find ~ ~/x ~/.config/ ~/.config/nvim/ ~/Projects ~/Oxford ~/x/work ~/x/.dotfiles/ ~/Documents ~/LEGO/ ~/LEGO_migration/ -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $session ]]; then
+    exit 0
+fi
+
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2> /dev/null; then 
@@ -14,3 +22,4 @@ tmux switch-client -t "$session_name"
 # mine, same as on windows
 echo "session: $session"
 cd session
+
