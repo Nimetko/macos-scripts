@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     session=$1
 else
-    session=$(find ~ ~/x ~/.config/ ~/.config/nvim/ ~/Projects ~/Oxford ~/x/work ~/x/.dotfiles/ ~/Documents ~/LEGO/ ~/LEGO_migration/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    session=$(find ~ ~/x ~/.config/ ~/.config/nvim/ ~/Projects ~/Oxford ~/x/work ~/x/.dotfiles/ ~/Documents ~/LEGO/ ~/LEGO_MIGRATION_NEW/ ~/LEGO_migration_OLD/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $session ]]; then
