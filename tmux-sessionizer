@@ -13,6 +13,7 @@ search_paths=(
   ~/LEGO
   ~/LEGO_MIGRATION_NEW
   ~/LEGO_migration_OLD
+  ~/Projects/AI
 )
 
 
