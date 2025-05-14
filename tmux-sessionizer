@@ -11,8 +11,6 @@ search_paths=(
   ~/x/.dotfiles
   ~/Documents
   ~/LEGO
-  ~/LEGO_MIGRATION_NEW
-  ~/LEGO_migration_OLD
   ~/Projects/AI
 )
 
